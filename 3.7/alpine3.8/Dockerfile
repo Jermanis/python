@@ -128,6 +128,10 @@ RUN set -ex; \
 		\) -exec rm -rf '{}' +; \
 	rm -f get-pip.py
 
+
+RUN cd /
+RUN mkdir django
+
 ENTRYPOINT ["/django"]
 #CMD ["python3"]
 CMD ["python manage.py runserver"
