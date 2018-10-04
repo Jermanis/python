@@ -131,6 +131,8 @@ RUN set -ex; \
 
 RUN cd /
 RUN mkdir django
+RUN cd django
+RUN chmod 777 .
 RUN pwd
 
 ENTRYPOINT ["/django"]
