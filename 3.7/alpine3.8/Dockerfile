@@ -127,7 +127,7 @@ RUN set -ex; \
 	rm -f get-pip.py
 
 ADD requirements.txt /requirements.txt
-pip install -r /path/to/requirements.txt
+RUN pip install -r /path/to/requirements.txt
 
 #RUN cd /
 #RUN mkdir django
