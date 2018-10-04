@@ -9,8 +9,6 @@ FROM alpine:3.8
 # ensure local python is preferred over distribution python
 ENV PATH /usr/local/bin:$PATH
 
-ADD requirements.txt /requirements.txt
-
 # http://bugs.python.org/issue19846
 # > At the moment, setting "LANG=C" on a Linux system *fundamentally breaks Python 3*, and that's not OK.
 ENV LANG C.UTF-8
@@ -128,13 +126,14 @@ RUN set -ex; \
 		\) -exec rm -rf '{}' +; \
 	rm -f get-pip.py
 
+ADD requirements.txt /requirements.txt
+pip install -r /path/to/requirements.txt
 
 #RUN cd /
 #RUN mkdir django
 #RUN cd django
 #RUN chmod 777 .
-RUN pwd
 
 #ENTRYPOINT ["/django"]
 #CMD ["python3"]
-CMD ["python manage.py runserver"]
+CMD ["cd django; python manage.py runserver"]
