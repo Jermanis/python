@@ -131,7 +131,7 @@ RUN set -ex; \
 
 RUN cd /
 RUN mkdir django
-RUN ECHO pwd
+RUN pwd
 
 ENTRYPOINT ["/django"]
 #CMD ["python3"]
