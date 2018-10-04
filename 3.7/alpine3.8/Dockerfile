@@ -129,12 +129,12 @@ RUN set -ex; \
 	rm -f get-pip.py
 
 
-RUN cd /
-RUN mkdir django
-RUN cd django
-RUN chmod 777 .
+#RUN cd /
+#RUN mkdir django
+#RUN cd django
+#RUN chmod 777 .
 RUN pwd
 
-ENTRYPOINT ["/django"]
+#ENTRYPOINT ["/django"]
 #CMD ["python3"]
 CMD ["python manage.py runserver"]
